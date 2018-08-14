@@ -1,0 +1,16 @@
+<tool id="compute_composite" name="Compute composite WW/SS and RR/YY profiles" version="0.1.0">
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+            compute_composite.sh "$input1" "$output1" 
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="tabular" label="Dinucleotide frequency profiles"/>
+    </inputs>
+    <outputs>
+        <data name="output1" format="tabular" />
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>

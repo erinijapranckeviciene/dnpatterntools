@@ -1,0 +1,5 @@
+set terminal postscript
+set output outputfile
+set title titletext
+set xrange [xmin:xmax]
+plot inputfile using 1:2 with lines ls 1

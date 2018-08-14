@@ -1,0 +1,19 @@
+<tool id="select_range" name="Select interval within the frequency profile " version="0.1.0">
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+            select_range.sh "$input1" "$startpos" "$size"  "$dinucleotides" "$output1"
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="tabular" label="Table of profiles"/>
+        <param name="startpos" type="integer" value="1" label="Start position" />
+        <param name="size" type="integer" value="146" label="Size of selection" />
+	<param name="dinucleotides" type="text" value="AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT" label="Dinucleotides" />
+    </inputs>
+    <outputs>
+      <data name="output1" format="tabular" label="Selected frequency profiles" metadata_source="input1"/>
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>

@@ -1,0 +1,15 @@
+<tool id="subset_dinuc_profile" name="Frequency profiles of all dinucleotides in fasta" version="0.1.0">
+  <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+          subset_dinuc_profile.sh "$input1" "$subset" "$output1"
+    ]]></command> 
+    <inputs>
+      <param type="data" name="input1" format="fasta" label="From fasta"/>
+      <param name="subset" type="text" value="AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT" label="Subset of dinucleotides"/>
+    </inputs>
+    <outputs>
+        <data name="output1" format="tabular" />
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>

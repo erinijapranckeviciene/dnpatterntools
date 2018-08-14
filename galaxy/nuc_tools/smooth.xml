@@ -1,0 +1,18 @@
+<tool id="smooth" name="Smooth profiles " version="0.1.0">
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+            smooth.sh "$input" "$swindow" "$trim" "$output"
+    ]]></command>
+    <inputs>
+        <param type="data" name="input" format="tabular" label="Dinucleotide frequency profiles"/>
+        <param name="swindow" type="integer" value="3" label="Sliding smoothing window (points)" />
+        <param name="trim" type="integer" value="3" label="Trim both sides (remove noisy signal) by:" />
+    </inputs>
+    <outputs>
+      <data name="output" format="tabular" />
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>
