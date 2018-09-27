@@ -15,9 +15,9 @@ echo ""
 # call corrprofile
 #
 echo "Compute Pearson correlation coefficient across a dinucleotide frequency profile within 146bp sliding window"
-echo  "CALL: ../core/bin/corrprofile --w 146 -n 219  ../data/TT.fc | head "
+echo  "CALL: ../programs/bin/corrprofile --w 146 -n 219  ../data/TT.fc | head "
 echo ""
-../core/bin/corrprofile --w 146 -n 219  ../data/TT.fc | head 
+../programs/bin/corrprofile --w 146 -n 219  ../data/TT.fc | head 
 echo ""
 echo "DONE"
 #

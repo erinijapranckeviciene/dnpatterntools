@@ -16,12 +16,12 @@ echo ""
 # on  original forvard sequence and its complementary sequence
 #
 echo "Compute dinucleotide frequency profile on original forward sequence"
-echo  "CALL: ../core/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f"
-../core/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f
+echo  "CALL: ../programs/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f"
+../programs/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f
 echo ""
 echo "Compute dinucleotide frequency profile on complementary to original sequence"
-echo  "CALL: ../core/bin/diprofile -di TT -sl 219 -c ../data/toymousenucseq.fasta > ../data/TT.c"
-../core/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f
+echo  "CALL: ../programs/bin/diprofile -di TT -sl 219 -c ../data/toymousenucseq.fasta > ../data/TT.c"
+../programs/bin/diprofile -di TT -sl 219 ../data/toymousenucseq.fasta > ../data/TT.f
 echo ""
 echo "Save forward and complementary profiles and display a tibble"
 echo "CALL: paste ../data/TT.f ../data/TT.c > ../data/TT.fc"

@@ -1,11 +1,11 @@
 #!/bin/sh
 # Shell wrapper of the call to Fourier Transform
-# call : ./Fourier_Transform -f input -o output  -n {normalization 0|1|2}  -l length_of_smoothing_window -t {type_of_output 1|2|3}
+# call : ./fourier -f input -o output  -n {normalization 0|1|2}  -l length_of_smoothing_window -t {type_of_output 1|2|3}
 
 # normalization
-#    0 basis normalization
-#    1 linear normalization
-#    2 quadratic normalization
+#    0 base normalization
+#    1 linear trend normalization
+#    2 quadratic trend normalization
 # type of output table
 #    1 normalization
 #    2 smoothing
@@ -50,12 +50,9 @@ trim=$5
 trim1=$((trim+1))
 outputtype=3
 
-# uncomment for a galaxy tool
-#dir=`pwd`/../../../../../tools/nuc_tools
 
-# comment for a galaxy tool
-dir=../core/extras
-call=${dir}/Fourier_Transform
+dir=../programs/bin
+call=${dir}/fourier
 
 ## here the data already has  positions
 ## get the nucleotides from the header

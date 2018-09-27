@@ -46,7 +46,7 @@ out=$4
 #dir=`pwd`/../../../../../tools/nuc_tools
 
 # comment for a galaxy tool
-dir=../core/bin/
+dir=../programs/bin/
 call=${dir}/corrprofile
 #echo ${call}
 

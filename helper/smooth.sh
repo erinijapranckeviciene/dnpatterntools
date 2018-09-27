@@ -37,15 +37,9 @@ trim=$3
 out=$4
 #echo ${out}
 
-## Will be calling Fourier_Transform, therefore pwd is needed
+dir=../programs/bin
 
-# uncomment for a galaxy tool
-#dir=`pwd`/../../../../../tools/nuc_tools
-
-# comment for a galaxy tool
-dir=../core/extras
-
-call=${dir}/Fourier_Transform
+call=${dir}/fourier
 #echo ${call}
 
 # compute centerd sequence position

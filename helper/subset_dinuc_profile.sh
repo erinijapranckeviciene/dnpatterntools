@@ -20,11 +20,7 @@ diset=$2
 out=$3
 
 
-# uncomment for a galaxy tool
-# dir=`pwd`/../../../../../tools/nuc_tools
-
-# directory of core tools comment for a galaxy tool
-dir=../core/bin/
+dir=../programs/bin/
 call=${dir}/diprofile
 
 ## the dinucleotide profiles are computed for the subset of dinucleotides listed in $diset

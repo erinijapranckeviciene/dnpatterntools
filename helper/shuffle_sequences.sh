@@ -19,11 +19,9 @@ fi
 name=$1
 diset=$2
 out=$3
-# uncomment for a galaxy tool
-#dir=`pwd`/../../../../../tools/nuc_tools
 
 # comment for a galaxy tool
-dir=../core/extras
+dir=../programs/bin
 call=${dir}/ushuffle
 
 ## given fasta file the sequences are shuffled preserving  $diset n-mer  frequency

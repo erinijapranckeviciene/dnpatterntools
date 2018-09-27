@@ -15,9 +15,9 @@ echo ""
 # call binstrings
 #
 echo ""
-echo  "CALL: ../core/bin/binstrings ../data/toymousenucseq.fasta AA | head -n2 "
+echo  "CALL: ../programs/bin/binstrings ../data/toymousenucseq.fasta AA | head -n2 "
 echo ""
-../core/bin/binstrings ../data/toymousenucseq.fasta AA | head -n2 
+../programs/bin/binstrings ../data/toymousenucseq.fasta AA | head -n2 
 echo ""
 echo "DONE"
 #
