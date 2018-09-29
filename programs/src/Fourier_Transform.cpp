@@ -281,20 +281,20 @@ int main(int argc, char *argv[])
 /* ///////////////////////////// Printing help ///////////////////// */
 void print_help()
 {
-	printf("\nFourie transform and smoothing of input sequence\n");
+	printf("\nFourier transform and smoothing of input sequence\n");
 	printf("input parameters:                               \n");
 	printf("------------------------------------------------\n");
 	printf("-f input sequence                               \n");
 	printf("-o output table                                 \n");
 	printf("-l length of window of smoothing                \n");
 	printf("-n type of normalisation:                       \n");
-	printf("     0 basis normalization                      \n");
-	printf("     1 linear normalization                     \n");
-	printf("     2 qubic normalization                      \n");
+	printf("     0 base normalization                      \n");
+	printf("     1 linear trend normalization              \n");
+	printf("     2 quadratic trend normalization           \n");
 	printf("-t type of output table:                        \n");
 	printf("     1 normalization                            \n");
 	printf("     2 smoothing                                \n");
-	printf("     3 Fourie transfor                          \n");
+	printf("     3 Fourier transform                        \n");
 	printf("                              S.Hosid 29.10.2008\n");
 
 }
