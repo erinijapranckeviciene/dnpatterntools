@@ -12,7 +12,7 @@ showing whether the profile of dinucleotide is between forward and reverse flag 
 general dinucleotide matching flag =0  */
 
 #include <iostream>
-//#include <seqan/basic.h>
+#include <seqan/arg_parse.h>
 #include <seqan/file.h>
 #include <seqan/sequence.h>
 #include <seqan/score.h>
@@ -72,19 +72,76 @@ void printFloat(String<int> const & text, unsigned const & count)
 }
 
 /*=====================================================*/
-int main(int argc, char *argv[]){
+struct binstringsOptions
+{
+  CharString   seqFileName;
+  String<Dna5>   nucPattern;
 
-  if ( argc <2 ) 
-  { 
-     std::cerr << "Call: binary fasta pattern seqlen winLen; Example: ./binary file.fa AA \n"; 
-     return 1;
-    }
-  
-   CharString   seqFileName = argv[1];
-   String<Dna5> nucPattern  = argv[2];
-   //unsigned     seqLen  = atoi(argv[3]);
-   //unsigned     winLen  = atoi(argv[4]);
-   
+  binstringsOptions():
+  nucPattern("CC")
+  {}
+};
+
+seqan::ArgumentParser::ParseResult
+parseCommandLine(binstringsOptions & options, int argc, char const ** argv)
+{
+  seqan::ArgumentParser parser("binstrings");
+
+  addArgument(parser, seqan::ArgParseArgument(seqan::ArgParseArgument::STRING, "FASTA FILE"));
+
+  addOption(parser, seqan::ArgParseOption(
+      "di", "dinucleotide", "Dinucleotide that is to identify in fasta sequences",
+      seqan::ArgParseArgument::STRING, "STRING"));
+  setDefaultValue(parser,"dinucleotide","CC");
+  seqan::setValidValues(parser,"dinucleotide","AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT");
+
+  seqan::setShortDescription(parser,"Binary strings from fasta");
+  seqan::setVersion(parser,"1.0");
+  seqan::setDate(parser,"September 2018");
+  seqan::addUsageLine(parser,
+                      "[\\fIOPTIONS\\fP] \"\\fIfastaFile.fa\\fP\"");
+
+  seqan::addDescription(parser,
+    "This program reads the fasta file and "
+   "each sequence is transformed into 0011 form in which ones denote"
+   "dinucleotides and zeros are elsewhere."    
+   "Binary sequence is printed. The last lne"
+   "is the profile of the dinucleotide appearance.");
+
+  seqan::addSection(parser, "binstrings Options");
+
+  seqan::addTextSection(parser,"Examples");
+  seqan::addListItem(parser,
+                     "\\fBbinstrings\\fP \\fB-di CC\\fP \\fIpath/to/fasta/file.fa\\fP",
+                     "Compute binary strings matching CC  in fasta sequences.");
+
+  seqan::addTextSection(parser,"Output");
+  seqan::addListItem(parser,
+                     "100000000111000 CC chr9:42475963-42476182 CCAGGCAGACCCCATA 4",
+                     "binary string,  CC, fasta id, DNA sequence, occurrences");
+
+  seqan::ArgumentParser::ParseResult res = seqan::parse(parser,argc,argv);
+
+  if (res != seqan::ArgumentParser::PARSE_OK)
+    return res;
+
+   getOptionValue(options.nucPattern,parser,"dinucleotide");
+   getArgumentValue(options.seqFileName,parser,0);
+
+   return seqan::ArgumentParser::PARSE_OK;
+}
+
+/*=====================================================*/
+int main(int argc, char const **argv){
+
+  binstringsOptions options;
+  seqan::ArgumentParser::ParseResult res = parseCommandLine(options, argc, argv);
+
+  if( res != seqan::ArgumentParser::PARSE_OK)
+    return res == seqan::ArgumentParser::PARSE_ERROR;
+
+  CharString   seqFileName = options.seqFileName;
+  String<Dna5> nucPattern  = options.nucPattern;
 
    String<Dna5> pattern = nucPattern;
    
