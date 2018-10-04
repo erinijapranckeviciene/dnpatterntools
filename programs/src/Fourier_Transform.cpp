@@ -1,7 +1,7 @@
-// Fourier_Transform.cpp : Defines the entry point for the console application.
-//
+/* Fourier_Transform.cpp : Defines the entry point for the console application. */
 
-//#include "stdafx.h"
+
+/* #include "stdafx.h" windows //version only*/
 
 #include "four_norm.h"
 #define LEN_ARR 32
@@ -28,6 +28,11 @@ int main(int argc, char *argv[])
 	double sigma=0;
 	double sigma_s=0;
 
+	double sum_x=0;
+	double sum_y=0;
+	double sum_xy=0;
+	double sum_x2=0;
+
 	double k1=0;
 	double k2=0;
 	double k3=0;
@@ -48,7 +53,7 @@ int main(int argc, char *argv[])
 	if(argc<5)
 	{
 		print_help();
-		return -1;
+		return 0;
 	}
 	for(i=1;i<argc;i++)
 	{
@@ -112,7 +117,7 @@ int main(int argc, char *argv[])
 				size_arr*=2;
 				arr_tab_temp=arr_tab;
 				arr_tab=(double*) malloc(sizeof(double)*size_arr*2);
-				for(j=0;j<size_arr*2;j++)
+				for(j=0;j<size_arr;j++)
 					arr_tab[j]=arr_tab_temp[j];
 				free(arr_tab_temp);
 			}
@@ -129,14 +134,25 @@ int main(int argc, char *argv[])
 	switch(n_type)
 	{
 	case 0:
+/*   average normalization A */
 		for(i=0;i<size_arr;i++)
 			k1+=arr_tab[i*2+1];
 		k1/=(size_arr-1);
 		break;
 	case 1:
+/*   linear normalization A+Bx */
+		for (i=0;i<size_arr;i++)
+		{
+			sum_x+=i;
+			sum_x2+=i*i;
+			sum_y+=arr_tab[i*2+1];
+			sum_xy+=i*arr_tab[i*2+1];
+		}
+		k2=(sum_xy-sum_x*sum_y/size_arr)/(sum_x2-sum_x*sum_x/size_arr);
+		k1=sum_y/size_arr-k2*sum_x/size_arr;
 		break;
 	case 2:
-/*	square normalization Ax2+Bx+C */
+/*	square normalization Ax^2+Bx+C */
 
 		mat1=(double*) malloc(sizeof(double)*12);
 		mat2=(double*) malloc(sizeof(double)*6);
@@ -207,6 +223,7 @@ int main(int argc, char *argv[])
 			arr_tab[i*2+1]-=k1;
 			break;
 		case 1:
+			arr_tab[i*2+1]-=k1+k2*i;
 			break;
 		case 2:
 			arr_tab[i*2+1]-=k1+k2*i+k3*i*i;
@@ -214,7 +231,7 @@ int main(int argc, char *argv[])
 		default:
 			break;
 		}
-/* print normalazed table */
+/* print normalized table */
 		if(k_type==1)
 		{
 			if(output_file==NULL)
@@ -232,7 +249,7 @@ int main(int argc, char *argv[])
 		for(j=0;j<len_smooth;j++)
 			sum+=arr_tab[(i+j)*2+1];
 		arr_tab_smooth[i]=sum/len_smooth;
-/* print smoothed normalazed table */
+/* print smoothed normalized table */
 		if(k_type==2)
 		{
 			if(output_file==NULL)
@@ -261,7 +278,7 @@ int main(int argc, char *argv[])
 		}
 		sum=sqrt(sum_s*sum_s+sum_c*sum_c)/sqrt(sigma*sigma_s);
 		sum_s=i/10.0;
-/* print Fourie transform */
+/* print Fourier transform */
 		if(output_file==NULL)
 			printf("%f %f\n", sum_s, sum);
 		else
@@ -289,13 +306,13 @@ void print_help()
 	printf("-l length of window of smoothing                \n");
 	printf("-n type of normalisation:                       \n");
 	printf("     0 base normalization                      \n");
-	printf("     1 linear trend normalization              \n");
-	printf("     2 quadratic trend normalization           \n");
+	printf("     1 linear normalization                     \n");
+	printf("     2 quadratic normalization                  \n");
 	printf("-t type of output table:                        \n");
 	printf("     1 normalization                            \n");
 	printf("     2 smoothing                                \n");
 	printf("     3 Fourier transform                        \n");
-	printf("                              S.Hosid 29.10.2008\n");
+	printf("                             S.Hosid 2008 - 2018\n");
 
 }
 /* /////////////////////////// read line from file ///////////// */
