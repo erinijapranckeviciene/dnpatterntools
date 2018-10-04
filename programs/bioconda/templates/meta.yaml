@@ -1,9 +1,9 @@
 package:
-  name: binstrings
+  name: corrprofile
   version: "1.0"
 
 source:
-  url: http://194.135.91.6/archive/v1.0.tar
+  url: http://194.135.91.6/archive/v1.0.tar.gz
   sha256: 19c46d6bc6a1af70e5a2b4a051aab334026dc38c84b367ea9c445da3fdb21cfe
 
 build:
@@ -29,9 +29,9 @@ requirements:
     
 test:
   commands:
-    - binstrings --help 
+    - corrprofile --help 
 
 about:
   home: https://github.com/erinijapranckeviciene/dnpatterntools
   license: MIT
-  summary: "Convert fasta strings into dinucleotide binary indicator string as 00101..."
+  summary: "Profile of correlations between the patterns of dinucleotide frequency on forward and reverse strands"
