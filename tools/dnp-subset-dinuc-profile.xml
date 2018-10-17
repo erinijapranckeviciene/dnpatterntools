@@ -1,0 +1,66 @@
+<tool id="dnp-subset-dinuc-profile" name="Frequency profiles of all dinucleotides in fasta" version="0.1.0">
+    <requirements>
+        <requirement type="package" version="1.0">dnp-diprofile</requirement>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+        dnp-subset-dinuc-profile.sh "$input1" "$input2" "$output1"
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="fasta" label="From fasta" />
+        <param type="text" name="input2"  value="AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT" label="Dinucleotides" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="tabular" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="input1" value="diprofile-input.fasta"/>
+            <param name="input2" value="AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT"/>
+            <output name="output1" file="diprofile-output.tabular"/>
+        </test>
+    </tests>
+    <help><![CDATA[
+         CALL 
+   sh subset_dinuc_profile.sh input.fasta  dinucleotides output
+
+ INPUT
+   input.fasta - a batch of nucleosome (or any DNA) DNA sequences 
+   dinucleotides - any subset of dinucleotides enclosed by quotes as 'AA AC AG AT CA CC' 
+
+ OUTPUT
+   output - file name to write the output  in tabular format, columns have names as AA.f AA.r ...
+
+ DESCRIPTION
+   Compute dinucleotide frequency profiles on forward and its complementary 
+   sequences in a batch of fasta sequences.The output columns are lebeled by AA.f, AA.r ... 
+
+ Example of input fasta lines
+  chr9:42475963-42476182
+  CCAGGCAGACCCCATATTCAAGCTGCTGCCCCAGGGTGGTGTACAGATCTGGGGAGAAGAAGGATGA
+  chr9:42476175-42476394
+  TCTGCACTCCAGCATGCCTGAGGAGAGGAGGGAATGCAGGATCCTAGTGGAAAGAGTACCAAGCTGG
+
+ Example of output  table
+  AA.f            AA.r            AC.f            AC.r   ...
+  0.076000        0.059000        0.065000        0.078000 ...
+  0.082000        0.060000        0.057000        0.076000 ...
+  0.067000        0.075000        0.049000        0.071000 ...
+
+
+ REQUIREMENT
+   dnp-diprofile installed
+   conda install -c bioconda dnp-diprofile
+
+    ]]></help>
+    <citations>
+        <citation type="bibtex">
+@misc{githubdnpatterntools,
+  author = {LastTODO, FirstTODO},
+  year = {TODO},
+  title = {dnpatterntools},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/erinijapranckeviciene/dnpatterntools},
+}</citation>
+    </citations>
+</tool>

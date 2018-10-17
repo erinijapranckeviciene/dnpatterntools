@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/erinija/devel/dnpatterntools/source/Fourier_Transform.cpp
+four_norm.h
+/home/erinija/devel/dnpatterntools/source/four_norm.h
+
+/home/erinija/devel/dnpatterntools/source/four_norm.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
