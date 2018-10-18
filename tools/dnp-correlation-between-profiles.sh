@@ -55,7 +55,7 @@ window=$2
 dinucleotides=$3
 out=$4
 
-call=corrprofile
+call=dnp-corrprofile
 
 # compute length of the file
 len=`wc ${name} |awk '{print $1}'` 
