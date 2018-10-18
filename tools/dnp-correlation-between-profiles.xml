@@ -1,4 +1,4 @@
-<tool id="dnp-correlation-between-profiles" name="Pearson correlation between dinucleotides frequency profiles" version="0.1.0">
+<tool id="dnp-correlation-between-profiles" name="Correlations" version="0.1.0">
     <requirements>
         <requirement type="package" version="1.0">dnp-corrprofile</requirement>
     </requirements>
@@ -23,56 +23,42 @@
     </tests>
     <help><![CDATA[
         
+Description::
 
- CALL  
-   sh dnp-correlation-between-profiles.sh difreq.tabular winsize  dinucleotides correlations.tabular
+   A highest symmetry between dinucleotide frequency of occurrence 
+   profiles on forward and complementary sequences can be determined by
+   a maximum positive Pearson correlation coefficient computed along
+   each position of the profile within a sliding window. A size of 
+   a sliding window equals a length of a nucleosome (146bp).
 
- INPUT
-   difreq.tabular - tabular file of dinucleotide frequencies on forward and complementary fasta sequences 
-   winsize        - size of sliding window within which correlation is computed (default 146)
-   dinucleotides  - 'AA AC AG AT ...'
-
- OUTPUT
-   correlations.tabular - tabular file of Pearson correlations at each position for given dinucleotides
-
- DESCRIPTION
-   To find a position of highest symmetry between the
-   dinucleotides positional frequency profiles on
-   forward and complementary sequences  a Pearson
-   correlation coefficient is computed at each position
-   between forward and complementary dinucleotide profiles
-   within a sliding window.
-   Input file contains dinucleotide frequencies arranged in columns
-   for input dinucleotides named by *.f and *.r corresponding to
-   forward and complementary profiles as for example:
-
- AA.f      AA.r      AC.f      AC.r      AG.f      AG.r
- 0.076320  0.067920  0.057800  0.078120  0.081600   0.061960
- 0.072540  0.069520  0.041800  0.079820  0.076300   0.055190
- ...       ...       ...       ...       ...        ...
-
-   The input.tabular file is obtained as output of a dnp-subset-dinuc-profile.sh.
-   A tabular output file contains columns of correlation coefficients 
-   along the positions of the frequency profile. A first column contains average of all
-   correlations at each position as shown:
-
- 0        AA        AC       AG
- 0.042205 0.0882716 0.030175 0.126967 
- ...      ...       ...      ...
-
-   Position and value of maximum correlations
+   Input file contains columns of dinucleotide frequencies named
+   by *.f and *.r corresponding to forward and complementary profile.
+   
+   Output contains columns of correlation coefficients in which each row
+   corresponds to a position of the frequency profile. A first column (0) 
+   is average of all correlations. A maximum correlation value and position
    of each dinucleotide are printed to a standard output.
 
- REQUIREMENT
-   dnp-corrprofile installed
-   conda install -c bioconda dnp-corrprofile
+Example::
+
+   
+   Input tabular:
+      AA.f      AA.r      AC.f      AC.r      AG.f      AG.r
+      0.076320  0.067920  0.057800  0.078120  0.081600   0.061960
+      0.072540  0.069520  0.041800  0.079820  0.076300   0.055190
+      ...       ...       ...       ...       ...        ...
+
+   Output tabular:
+      0        AA        AC       AG
+      0.042205 0.0882716 0.030175 0.126967 
+      ...      ...       ...      ...
 
 
     ]]></help>
     <citations>
         <citation type="bibtex">
 @misc{githubdnpatterntools,
-  author = {LastTODO, FirstTODO},
+  author = {E.Pranckeviciene, S.Hosid, I.Ioshikhes},
   year = {2018},
   title = {dnpatterntools},
   publisher = {GitHub},

@@ -21,33 +21,33 @@
     </tests>
     <help><![CDATA[
 
- CALL  
-   sh binary_strings.sh input.fasta dinucleotides output.file
+Description::
 
- INPUT
-   input.fasta   - input fasta file 
-   dinucleotides - 'AA AC AG AT ...'
 
- OUTPUT
-   output.file   - name of tabular format output file 
-
- DESCRIPTION
    Convert fasta sequences to a binary sequence of 01 
-   in which 1(ones) indicate a presence of a given
-   dinucleotide at that position and 0 everywhere else.
-   Each fasta sequence in the input file has a 
-   corresponding row with four tab separated columns:
-   binary_string dinucleotide fasta_string times_occurred
+   in which ones indicate a presence of a given 
+   dinucleotide at that position.
 
- REQUIREMENT
-   install dnp-binstrings
-   conda install -c bioconda dnp-binstrings
+   Each input fasta sequence has a corresponding output
+   row with tab separated columns- binary string, dinucleotide,  
+   original fasta string, number of the dinucleotide occurrences
+
+
+Example::
+
+   Input fasta:
+      chr9:42475963-42476182 
+      CCAGGCAGACCCCATA
+   
+   Output tabular:
+      100000000111000 CC chr9:42475963-42476182 CCAGGCAGACCCCATA 4
+
 
     ]]></help>
     <citations>
         <citation type="bibtex">
 @misc{githubdnpatterntools,
-  author = {LastTODO, FirstTODO},
+  author = {E.Pranckeviciene},
   year = {2018},
   title = {dnpatterntools},
   publisher = {GitHub},
