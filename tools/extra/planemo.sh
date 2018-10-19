@@ -98,17 +98,17 @@
 
 ###################################################
 #subset_dinuc_profile.sh
-planemo tool_init --force \
-                    --id 'dnp-subset-dinuc-profile' \
-                    --name 'Frequency profiles of all dinucleotides in fasta' \
-                    --requirement dnp-diprofile@1.0 \
-                    --example_command 'sh subset_dinuc_profile.sh diprofile-input.fasta "AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT" diprofile-output.tabular' \
-                    --example_input diprofile-input.fasta \
-                    --example_input 'AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT' \
-                    --example_output diprofile-output.tabular \
-                    --test_case \
-                    --cite_url 'https://github.com/erinijapranckeviciene/dnpatterntools' \
-                    --help_from_command 'sh dnp-subset-dinuc-profile.sh'
+#planemo tool_init --force \
+#                    --id 'dnp-subset-dinuc-profile' \
+#                    --name 'Frequency profiles of all dinucleotides in fasta' \
+#                    --requirement dnp-diprofile@1.0 \
+#                    --example_command 'sh subset_dinuc_profile.sh diprofile-input.fasta "AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT" diprofile-output.tabular' \
+#                    --example_input diprofile-input.fasta \
+#                    --example_input 'AA AC AG AT CA CC CG CT GA GC GG GT TA TC TG TT' \
+#                    --example_output diprofile-output.tabular \
+#                    --test_case \
+#                    --cite_url 'https://github.com/erinijapranckeviciene/dnpatterntools' \
+#                    --help_from_command 'sh dnp-subset-dinuc-profile.sh'
 
 #symmetrize.sh
 #planemo tool_init --force \

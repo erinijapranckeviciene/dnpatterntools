@@ -1,0 +1,34 @@
+<tool id="plot_selected" name="Plot columns" version="0.1.0">
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+            plot_selected.sh "$input" "$output" "$title" "$columns"
+    ]]></command>
+    <inputs>
+      <param type="data" name="input" format="tabular" label="Select profile from:"/>
+      <param type="text" name="title" value="Plot of " label="Name of the plot" />
+      <param type="text" name="columns" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17" label="Columns to plot" />
+    </inputs>
+    <outputs>
+        <data name="output" format="png" />
+    </outputs>
+    <help><![CDATA[
+
+Description::
+
+   Using gnu plot  selected columns in a table are plotted.
+   It is useful for a quick inspection of the profiles.
+
+    ]]></help>
+    <citations>
+        <citation type="bibtex">
+@misc{githubdnpatterntools,
+  author = {E.Pranckeviciene, S.Hosid},
+  year = {2018},
+  title = {dnpatterntools},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/erinijapranckeviciene/dnpatterntools},
+}</citation>
+    </citations>
+</tool>

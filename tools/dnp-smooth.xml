@@ -1,4 +1,4 @@
-<tool id="dnp-smooth" name="Smoothing of dinucleotide frequency profile" version="0.1.0">
+<tool id="dnp-smooth" name="Smooth" version="0.1.0">
     <requirements>
         <requirement type="package" version="1.0">dnp-fourier</requirement>
     </requirements>
@@ -25,25 +25,18 @@
     </tests>
     <help><![CDATA[
         
- CALL 
-   sh dnp-smooth.sh smoothing-input.tabular winsize trim smoothed-output.tabular
 
- INPUT 
-   smoothing-input.tabular  - dinucleotide frequency profiles-patterns to smooth
-   winsize                  - size of averaging window, suggested optimal value =3
-   trim                     - how many noisy points to remove from both ends of the profile suggested =4
+Description::
 
- OUTPUT 
-   smoothed-output.tabular - original series smoothed 
-
- DESCRIPRION
    Applies smoothing on dinucleotide profiles. Smoothing reduces noise and enhances
    representation of the dinucleotide frequency  profiles. Smoothing is performed by
-   moving average with chosen window size (optimal winsize=3). Smoothing script is based on
-   a shell wrapper of the call to dnp-fourier tool which computes a periodogram
-   of a series given as a numerical column and it is called as follows
+   moving average with chosen window size (optimal winsize=3). 
+
+   Smoothing script is based on a shell wrapper of the call to dnp-fourier tool which computes a periodogram
+   of a series given as a numerical column parameters as follows:
    dnp-fourier -f input -o output  -n {normalization 0|1|2}  -l length_of_smoothing_window -t {type_of_output 1|2|3}
-   The parameters control a type of normalization and output.
+
+   The parameters control a type of normalization and output:
    Normalization
        0 base normalization  subtracts mean
        1 linear normalization removes linear trand 
@@ -53,7 +46,10 @@
        2 smoothing outputs smoothed original series
        3 Fourier transform outputs periofogram
 
-    Example of input table
+Example::
+
+    Input tabular:
+
     pos AA      AC      AG      AT      CA      CC      CG      CT      GA      GC      GG      GT      TA      TC      TG      TT      WW      SS      RR      YY
     -73 0.05664 0.0657  0.06966 0.03644 0.08026 0.09484 0.0362  0.09086 0.07084 0.04032 0.07318 0.06466 0.03862 0.06838 0.05722 0.05602 0.18772 0.24454 0.27032 0.3101
     -72 0.0668  0.06476 0.0753  0.04282 0.07022 0.08034 0.03534 0.081   0.07222 0.03512 0.06774 0.0598  0.03934 0.07496 0.06628 0.06784 0.2168  0.21854 0.28206 0.30414
@@ -62,19 +58,15 @@
     -69 0.0622  0.06456 0.074   0.0426  0.0661  0.07114 0.03414 0.08016 0.0703  0.03786 0.07118 0.06754 0.0421  0.07712 0.06988 0.06904 0.21594 0.21432 0.27768 0.29746
     ...
 
-    Output table is an original input table but smoothed by moving average with given window size.
-
- REQUIREMENT
-   dnp-fourier installed
-   conda install -c bioconda dnp-fourier
+    Output is an original input table but smoothed by moving average with given window size, tabular.
 
 
     ]]></help>
     <citations>
         <citation type="bibtex">
 @misc{githubdnpatterntools,
-  author = {LastTODO, FirstTODO},
-  year = {TODO},
+  author = {E.Pranckeviciene, S.Hosid},
+  year = {2018},
   title = {dnpatterntools},
   publisher = {GitHub},
   journal = {GitHub repository},

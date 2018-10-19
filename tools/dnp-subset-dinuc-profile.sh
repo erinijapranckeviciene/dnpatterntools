@@ -13,7 +13,7 @@ echo  "   output - file name to write the output  in tabular format, columns hav
 echo  ""
 echo  " DESCRIPTION"
 echo  "   Compute dinucleotide frequency profiles on forward and its complementary "
-echo  "   sequences in a batch of fasta sequences.The output columns are lebeled by AA.f, AA.r ... "
+echo  "   sequences from a batch of fasta sequences. Output columns are labelled by AA.f, AA.r ... "
 echo  ""
 echo  " Example of input fasta lines"
 echo  "  >chr9:42475963-42476182"

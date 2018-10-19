@@ -24,8 +24,9 @@ Description::
    Symmetrization of the dinucleotide profiles enhances patterns with respect to a dyad position of a nucleosome.
    To symmetrize dinucleotide's positional frequency pattern with respect to a dyad position, a frequency patterns 
    of dinucleotides on forward and complementary sequences are superimposed by averaging forward and reversed complement 
-   profiles of identified nucleosome. A base pair number indicating upstream (-) and downstream (+) position with respect to 
-   a dyad is given on a firts column.
+   profiles of dinucleotides in the nucleosome's occupancy interval. A first columns indicates a base pair number that is 
+   upstream (-) and downstream (+) with respect to the dyad. The pattern spans 146 base pairs and the positions are in 
+   the interval [-73,73]. 
 
 Example::
 
