@@ -16,7 +16,6 @@ Figure 1 illustrates the owerall Galaxy worklflow.
     :height: 250px
     :alt: workflow figure
     :figclass: align-center
-
     Figure 1. Galaxy workflow of dinucleotide frequency pattern computation from a batch of nucleosomes fasta sequences. 
 
 Step 1. Upload data 
@@ -25,12 +24,11 @@ Step 1. Upload data
 Figure 2 shows mouse nucleosomes fasta sequences uploaded into Galaxy. The tool panel shows all dnpattern tools. 
 
 .. figure:: f1.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: upload data
     :figclass: align-center
-
     Figure 2. Uploaded test fasta sequences
 
 Step 2. Compute dinucleotide frequency of occurrences
@@ -41,21 +39,19 @@ Frequency profiles will be computed for all 16 dinucleotides on forward and comp
 computed frequency profiles. Only 16 columns were plotted. The **Plot columns** tool is an extra tool for a rapid visualizaton. 
 
 .. figure:: f2.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: dinucleotide frequencies
     :figclass: align-center
-
     Figure 3. **Dinucleotide frequences** tool interface.
 
 .. figure:: f3.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: dinucleotide frequencies plot
     :figclass: align-center
-
     Figure 4. Result of **Dinucleotide frequences** tool as plot.
 
 Step 3. Compute correlations of dinucleotide frequency profiles in each poition along a fasta sequence
@@ -71,30 +67,29 @@ This step can't be fully automated and needs visual inspection. In this example 
 at a position 25. The AA and TT had very prominent maximums at that position. Figure 7 shows a plot of correlations. 
 
 .. figure:: f4.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: correlations
     :figclass: align-center
-
     Figure 5. **Correlations** tool interface.
 
+
 .. figure:: f5.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: correlations result
     :figclass: align-center
-
     Figure 6. Result of **Correlations** tool.
 
+
 .. figure:: f6.png
-    :width: 500px
+    :width: 300px
     :align: center
-    :height: 250px
+    :height: 150px
     :alt: correlations plot
     :figclass: align-center
-
     Figure 7. Plot of **Correlations** result.
 
 
