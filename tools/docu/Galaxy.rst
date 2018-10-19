@@ -99,5 +99,59 @@ at a position 25. The AA and TT had very prominent maximums at that position. Fi
 
     Figure 7. Plot of **Correlations** result.
 
+Step 4. Select interval of nucleosome's location
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+To analyze dinucleotide frequency distribution patterns in nucleosomes only profiles
+that belong to the nucleosome is selected. In step 3 the start of the nucleosome location was 
+identified at position 25. The tool **Select interval** selects the nucleosome's location interval 
+from the frequency profiles. The start position is 25 and a size of selection is length of nucleosome 
+which is 146 base pairs. Figure 8 shows interface to this tool and Figure 9 show a result of selection 
+in which the first column enumerates positions relative to the original nucleosome sequence. Note that 
+the input for this tool is original dinucleotide frequency profiles. 
+
+.. figure:: f7.png
+    :width: 300px
+    :align: center
+    :height: 150px
+    :alt: select interval
+    :figclass: align-center
+
+    Figure 8. **Select interval** tool interface.
+
+
+.. figure:: f8.png
+    :width: 300px
+    :align: center
+    :height: 150px
+    :alt: select interval result
+    :figclass: align-center
+
+    Figure 9. Result of **Select interval** tool.
+
+Step 5. Symmetrization and computation of composite profiles
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Figure 10 shows interface to the **Symmetrization** tool and Figure 11 shows
+output of symmetrization. 
+
+.. figure:: f9.png
+    :width: 300px
+    :align: center
+    :height: 150px
+    :alt: symmetrization
+    :figclass: align-center
+
+    Figure 10. **Symmetrization** tool interface.
+
+
+.. figure:: f10.png
+    :width: 300px
+    :align: center
+    :height: 150px
+    :alt: symmetrization result
+    :figclass: align-center
+
+    Figure 11. Result of **Symmetrization** tool.
 
 
