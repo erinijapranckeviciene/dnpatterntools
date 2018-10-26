@@ -21,9 +21,9 @@
 #    These programs depend on SeqAn library. 
 #    Therefore, the SeqAn library has to be either installed or made available.
 #    One posibility that works with make is to get the SeqAn library headers 
-#    into the current directory by svn (although this is not a best practice).
+#    into the current directory by svn (not a best practice).
 #    The best is to use cmake (the 3rd option). If core programs are to be used with 
-#    the tools (shell scripts) than they should be prefixed by dnp-*. 
+#    the tools than they should be prefixed by dnp-*. 
 #
 #       cd source
 #       svn checkout https://github.com/seqan/seqan/trunk/include
@@ -42,16 +42,12 @@
 #       conda install seqan-library -c conda-forge 
 # 
 #    conda installs seqan library in its default environment. 
-#    Descend into the source directory and run cmake using 
-#    Release type build. This removes debug information from the 
-#    binaries. If the debug is present there might be some problems
-#    with assertions. This will addressed shortly. When building with
-#    cmake you should create a build directory and make your 
-#    build within it. The cmake will find all dependences and will create
-#    a Makefile which is used to build the programs. 
-#    After a build move the binaries to the directory of executables
+#    Descend into the source directory and run cmake.
+#
+#    In building with cmake you create a separate build directory 
+#    build in this directory. The cmake will find all dependences and will create
+#    a Makefile for make. Move the binaries to the directory of executables
 #    or export the PATH. 
-#   
 #
 #       cd source
 #       mkdir build
@@ -63,7 +59,7 @@
 #   or
 #       export PATH=/your/location/of/the/programs:$PATH
 #
-#   These programs were created to work with nucleosomes dna. However,
-#   they have a wide scope of application. 
+#   These programs were created to work with nucleosome DNA sequences. 
+#   Nevertheles, they may have a wide scope of application. 
 
 
