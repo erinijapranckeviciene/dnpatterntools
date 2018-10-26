@@ -14,21 +14,19 @@ its periodogram. Fully functional Galaxy wrappers are provided in the *tools* fo
 readily used. The *galaxy-workflow.pdf* describes how to use the tools in Galaxy.
 
 Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_ . 
-The core utilities are available through conda. Building core utilities from source depend on SeqAn.
-The tools to analyze dinucleotide patterns in nucleosomes independ on the core utilities 
-and are implemented as shell scripts.  
+The core utilities are available through conda. To build core utilities from source the SeqAn library should be installed.
+The tools for dinucleotide pattern analysis in nucleosomes DNA  are shell scripts and require core utilities.  
    
 Structure
 """""""""""       
 
-The whole dnpatterntools directory structure is shown in a tree diagram::
+The whole dnpatterntools directory structure is following::
 
    dnpatterntools/
    ├── bin
    ├── source
    ├── test
    ├── tools
-   │   ├── docu
    │   ├── extra
    │   └── test-data
    └── tools-extra
@@ -41,21 +39,21 @@ The whole dnpatterntools directory structure is shown in a tree diagram::
            └── R
 
 The *bin* and *source* folders contain binaries (might or might not not work on your system) 
-and CPP code of core programs. The core programs are summarized below: 
+and C++ code of core programs. The core programs are summarized below: 
 
-===================================== ========================== =======================================================================================================
-Source CPP                                Name of binary             Description 
-===================================== ========================== =======================================================================================================
-binstrings.cpp                          dnp-binstrings            Converts fasta sequence into binary string of dinucleotide occurrences
-diprofile.cpp                           dnp-diprofile             Computes profiles of dinucleotide frequency of occurrence in a batch of aligned fasta sequences 
-corrprofile.cpp                         dnp-corrprofile           Computes Pearson correlation between a forward and reversed complement dinucleotide frequency profiles
-Fourier_Transform.cpp                   dnp-fourier               Computes either smoothed and normalized dinucleotide frequency profile or its periodogram
-===================================== ========================== =======================================================================================================
+======================= ================== =======================================================================================================
+C++ source               Name of binary     Description 
+======================= ================== =======================================================================================================
+binstrings.cpp           dnp-binstrings     Converts fasta sequence into binary string of dinucleotide occurrences
+diprofile.cpp            dnp-diprofile      Computes profiles of dinucleotide frequency of occurrence in a batch of aligned fasta sequences 
+corrprofile.cpp          dnp-corrprofile    Computes Pearson correlation between a forward and reversed complement dinucleotide frequency profiles
+Fourier_Transform.cpp    dnp-fourier        Computes either smoothed and normalized dinucleotide frequency profile or its periodogram
+======================= ================== =======================================================================================================
 
 The *tools* folder contains tools that implement complete workflow to obtain and characterize dinucleotide 
-patterns in a batch of fasta sequences. The tools are written in shell and depends on the core tools. 
-Each tool has an associated  galaxy xml wrapper with the same name. The Galaxy wrappers tested and served 
-using Planemo (to be submitted to the Galaxy ToolShed)
+patterns in a batch of fasta sequences. The tools are written in *shell* and depends on the core tools. 
+Each tool has an associated  galaxy *xml* wrapper with the same name. The Galaxy wrappers have been tested and served 
+using Planemo (to be submitted to the Galaxy ToolShed). Below is a summary of the tools:
 
 ===================================== ========================== =======================================================================================================
 Script name                           Galaxy tool name           Description 
@@ -71,7 +69,8 @@ dnp-fourier-transform.sh              Periodogram                Computes period
 
 The *test* folder contains shell scripts of test calls to the core programs and *dnp* tools. 
 
-The *tools-extra* folder contains bioconda-recipes for the core tools. The ggplot-scripts contains *R* functions to visualize some of the tools outputs offline. 
+The *tools-extra* folder contains bioconda-recipes for the core tools. 
+The *ggplot-scripts* contains *R* functions to visualize the tools outputs. 
 
 How to use
 ------------
@@ -82,22 +81,22 @@ If core programs are already installed, then descend into *test* directory to ru
 are in *tools/test-data* folder. A standard use is described in a workflow. However, these tools 
 may have a wider scope of application.
 
-Workflow description
-------------------------
+Workflow 
+----------
 
-Computation patterns of dinucleotide frequency distributions from nucleosome sequences consists of:
+Complete workflow has following steps:
    
-   1. Computation of distribution of frequency of dinucleotide occurrences in a batch of aligned sequences; 
+   1. Computation of dinucleotide frequency distributions in a batch of aligned sequences. 
       
-   2. Determination of nucleosome's position in sequences; 
+   2. Determining a nucleosome location from the dinucleotide frequency distributions.  
       
-   3. Obtaining patterns of dinucleotide frequency profiles of the determined nucleosome by applying
-      a symmetrization and computation of composite dinucleotides WW/SS (W = A or T and S=C or G) 
-      and RR/YY (R=A or G and Y=C or T); 
+   3. Symmetrization and computation of composite distributions of WW/SS (W = A or T and S=C or G) 
+      and RR/YY (R=A or G and Y=C or T) dinucleotides. 
 
-   4. Normalization and smoothing of the patterns and computing their periodograms.
+   4. Normalization and smoothing of the dinucleotide frequency distribution patterns in nucleosomes
+      and computing their periodograms.
 
-The workflow steps and tools used in each step are shown in Figure 1. 
+Workflow steps and tools required in each step are shown in Figure 1. 
 
 .. figure:: workflow-to-compute-patterns.jpg
     :width: 700px
