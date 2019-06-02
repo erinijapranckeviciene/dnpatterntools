@@ -11,14 +11,18 @@ sequences, to compute correlations between patterns of dinucleotide distribution
 How to use
 ---------------------
 
+Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_  and can be installed on Linux system by conda::
+    conda install dnp-binstrings  -c bioconda
+    conda install dnp-diprofile   -c bioconda
+    conda install dnp-corrprofile -c bioconda
+    conda install dnp-fourier     -c bioconda
+
+To build core utilities from source follow _`instructions in the *source* folder <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_. 
 
 Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
 <https://planemo.readthedocs.io/en/latest/readme.html>`_ launches a Galaxy instance in which the tools can be 
 readily used. The *galaxy-workflow.pdf* describes how to use the tools in Galaxy.
 
-Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_ . 
-The core utilities are available through conda. To build core utilities from source the SeqAn library should be installed.
-The tools for dinucleotide pattern analysis in nucleosomes DNA  are shell scripts and require core utilities.  
    
 Structure
 """""""""""       
