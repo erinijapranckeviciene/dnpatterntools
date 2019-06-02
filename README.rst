@@ -29,11 +29,42 @@ and follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntoo
 The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance contains demo data and demo workflow.   
 
 On this site the fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine use a `planemo serve 
-<https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. The *galaxy-workflow.pdf* gives tools overview in Galaxy.
+<https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. The `galaxy-workflow.pdf 
+<https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/galaxy-workflow.pdf
+>`_ explains how to use tools in Galaxy.
+
+Workflow 
+----------
+
+Complete dnpaterntools workflow has following steps:
+   
+   1. Computation of dinucleotide frequency distributions in a batch of aligned sequences. 
+      
+   2. Determining a nucleosome location from the dinucleotide frequency distributions.  
+      
+   3. Symmetrization and computation of composite distributions of WW/SS (W = A or T and S=C or G) 
+      and RR/YY (R=A or G and Y=C or T) dinucleotides. 
+
+   4. Normalization and smoothing of the dinucleotide frequency distribution patterns in nucleosomes
+      and computing their periodograms.
+
+Workflow steps and tools required in each step are shown in Figure 1. 
+
+.. figure:: workflow-to-compute-patterns.jpg
+    :width: 700px
+    :align: center
+    :height: 350px
+    :alt: workflow figure
+    :figclass: align-center
+
+    Figure 1. The workflow of dinucleotide frequency pattern computation from a batch of nucleosomes fasta sequences. 
 
    
+Additional information
+""""""""""""""""""""""""""""       
+
 Structure
-"""""""""""       
+----------------
 
 The whole dnpatterntools directory structure is following::
 
@@ -87,40 +118,14 @@ The *test* folder contains shell scripts of test calls to the core programs and 
 The *tools-extra* folder contains bioconda-recipes for the core tools. 
 The *ggplot-scripts* contains *R* functions to visualize the tools outputs. 
 
-How to use
-------------
+How to run scripts
+-----------------------
 
 Download the repository or use *git clone*. Follow building instructions in the *source* folder. 
 If core programs are already installed, then descend into *test* directory to run tests. Run the 
 *test-dependencies.sh* to test the core programs. Run *test_tools.sh* to test tools. The test data files 
 are in *tools/test-data* folder. A standard use is described in a workflow. However, these tools 
 may have a wider scope of application.
-
-Workflow 
-----------
-
-Complete workflow has following steps:
-   
-   1. Computation of dinucleotide frequency distributions in a batch of aligned sequences. 
-      
-   2. Determining a nucleosome location from the dinucleotide frequency distributions.  
-      
-   3. Symmetrization and computation of composite distributions of WW/SS (W = A or T and S=C or G) 
-      and RR/YY (R=A or G and Y=C or T) dinucleotides. 
-
-   4. Normalization and smoothing of the dinucleotide frequency distribution patterns in nucleosomes
-      and computing their periodograms.
-
-Workflow steps and tools required in each step are shown in Figure 1. 
-
-.. figure:: workflow-to-compute-patterns.jpg
-    :width: 700px
-    :align: center
-    :height: 350px
-    :alt: workflow figure
-    :figclass: align-center
-
-    Figure 1. The workflow of dinucleotide frequency pattern computation from a batch of nucleosomes fasta sequences. 
 
 Use of core programs
 ----------------------
