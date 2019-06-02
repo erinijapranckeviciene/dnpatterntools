@@ -2,14 +2,11 @@
 dnpatterntools v1.0 
 ---------------------
 
-A set of tools to analyze patterns of dinucleotide distributions in nucleosomal DNA sequences in fasta. 
+A set of tools to analyze patterns of dinucleotide distributions in nucleosomal DNA fasta sequences. 
 
-Most often, computation of these features
-is implemented individually which makes difficult to compare and reproduce results 
-produced in different projects. This repository contains tools to convert fasta sequences into binary strings of 
+Most often, computation of these features is implemented individually which makes difficult to compare and reproduce results obtained in different projects. This repository contains tools to convert fasta sequences into binary strings of 
 dinucleotide occurrences, to compute dinucleotide frequencies of occurrence in a batch of aligned fasta
-sequences, to identify patterns of dinucleotide distributions in nucleosomes DNA, to smooth pattern and compute
-its periodogram. Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
+sequences, to compute correlations between patterns of dinucleotide distributions in nucleosomes DNA, to smooth patterns and to compute their periodograms. Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
 <https://planemo.readthedocs.io/en/latest/readme.html>`_ launches a Galaxy instance in which the tools can be 
 readily used. The *galaxy-workflow.pdf* describes how to use the tools in Galaxy.
 
