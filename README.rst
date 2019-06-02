@@ -6,7 +6,13 @@ A set of tools to analyze patterns of dinucleotide distributions in nucleosomal 
 
 Most often, computation of these features is implemented individually which makes difficult to compare and reproduce results obtained in different projects. This repository contains tools to convert fasta sequences into binary strings of 
 dinucleotide occurrences, to compute dinucleotide frequencies of occurrence in a batch of aligned fasta
-sequences, to compute correlations between patterns of dinucleotide distributions in nucleosomes DNA, to smooth patterns and to compute their periodograms. Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
+sequences, to compute correlations between patterns of dinucleotide distributions in nucleosomes DNA, to smooth patterns and to compute their periodogramms.
+
+How to use
+---------------------
+
+
+Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
 <https://planemo.readthedocs.io/en/latest/readme.html>`_ launches a Galaxy instance in which the tools can be 
 readily used. The *galaxy-workflow.pdf* describes how to use the tools in Galaxy.
 
