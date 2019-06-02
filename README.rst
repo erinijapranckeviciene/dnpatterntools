@@ -26,7 +26,7 @@ To build core utilities from source::
     
 and follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ . 
 
-The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance contains demo data and demo workflow.   
+The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance contains demo data and demo workflow. This instance is based on the `galaxy-stable <https://zenodo.org/record/2579276>`_ .  
 
 On this site the fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine use a  
 `planemo serve <https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. The `galaxy-workflow pdf  <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/galaxy-workflow.pdf>`_ explains how to use tools in Galaxy.
@@ -59,11 +59,10 @@ Workflow steps and tools required in each step are shown in Figure 1.
 
    
 Additional information
-""""""""""""""""""""""""""""       
+---------------------------------       
 
 Structure
-----------------
-
+"""""""""""""
 The whole dnpatterntools directory structure is following::
 
    dnpatterntools/
