@@ -21,14 +21,15 @@ Core utilities are written in C++ using the `SeqAn library <https://seqan.readth
 To build core utilities from source::
 
     cd <your working dir>
-    git clone 
-follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ . 
+    git clone https://github.com/erinijapranckeviciene/dnpatterntools.git
+    cd dnpatterntools
+    
+and follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ . 
 
-The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. 
+The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance contains demo data and demo workflow.   
 
-Here fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine use a `planemo serve 
-<https://planemo.readthedocs.io/en/latest/readme.html>`_ from within launches a Galaxy instance in which the tools can be 
-readily used. The *galaxy-workflow.pdf* describes how to use the tools in Galaxy.
+On this site the fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine use a `planemo serve 
+<https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. The *galaxy-workflow.pdf* gives tools overview in Galaxy.
 
    
 Structure
