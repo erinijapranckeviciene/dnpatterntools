@@ -12,12 +12,13 @@ How to use
 ---------------------
 
 Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_  and can be installed on Linux system by conda::
+
     conda install dnp-binstrings  -c bioconda
     conda install dnp-diprofile   -c bioconda
     conda install dnp-corrprofile -c bioconda
     conda install dnp-fourier     -c bioconda
 
-To build core utilities from source follow _`instructions in the *source* folder <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_. 
+To build core utilities from source follow instructions in the `*source* <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ folder. 
 
 Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
 <https://planemo.readthedocs.io/en/latest/readme.html>`_ launches a Galaxy instance in which the tools can be 
