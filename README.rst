@@ -18,7 +18,7 @@ Core utilities are written in C++ using the `SeqAn library <https://seqan.readth
     conda install dnp-corrprofile -c bioconda
     conda install dnp-fourier     -c bioconda
 
-To build core utilities from source follow instructions in the `*source* <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ folder. 
+To build core utilities from source follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ . 
 
 Fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine a `planemo serve 
 <https://planemo.readthedocs.io/en/latest/readme.html>`_ launches a Galaxy instance in which the tools can be 
