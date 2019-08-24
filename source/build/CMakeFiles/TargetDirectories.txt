@@ -1,0 +1,6 @@
+/home/erinija/dnpatterntools/source/build/CMakeFiles/edit_cache.dir
+/home/erinija/dnpatterntools/source/build/CMakeFiles/dnp-diprofile.dir
+/home/erinija/dnpatterntools/source/build/CMakeFiles/dnp-binstrings.dir
+/home/erinija/dnpatterntools/source/build/CMakeFiles/rebuild_cache.dir
+/home/erinija/dnpatterntools/source/build/CMakeFiles/dnp-corrprofile.dir
+/home/erinija/dnpatterntools/source/build/CMakeFiles/dnp-fourier.dir

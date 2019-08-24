@@ -1,0 +1,22 @@
+Performing C++ SOURCE FILE Test CXX14_BUILTIN failed with the following output:
+Change Dir: /home/erinija/dnpatterntools/source/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1335f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1335f.dir/build.make CMakeFiles/cmTC_1335f.dir/build
+make[1]: Entering directory '/home/erinija/dnpatterntools/source/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1335f.dir/src.cxx.o
+/usr/bin/c++     -DCXX14_BUILTIN   -o CMakeFiles/cmTC_1335f.dir/src.cxx.o -c /home/erinija/dnpatterntools/source/build/CMakeFiles/CMakeTmp/src.cxx
+/home/erinija/dnpatterntools/source/build/CMakeFiles/CMakeTmp/src.cxx:2:6: error: #error NOCXX14
+     #error NOCXX14
+      ^
+CMakeFiles/cmTC_1335f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_1335f.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_1335f.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/erinija/dnpatterntools/source/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1335f/fast' failed
+make: *** [cmTC_1335f/fast] Error 2
+
+Source file was:
+#if !defined(__cplusplus) || (__cplusplus < 201300L)
+    #error NOCXX14
+    #endif
+    int main() {}

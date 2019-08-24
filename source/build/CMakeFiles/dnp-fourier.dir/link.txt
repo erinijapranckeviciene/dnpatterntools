@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++14  -O3 -DNDEBUG   -Wl,--whole-archive -lpthread -Wl,--no-whole-archive CMakeFiles/dnp-fourier.dir/Fourier_Transform.cpp.o  -o dnp-fourier -rdynamic 

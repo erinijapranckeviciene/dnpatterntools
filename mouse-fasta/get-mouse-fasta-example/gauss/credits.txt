@@ -1,0 +1,3 @@
+Gaussian smoothing and max position identification awk scripts.
+By Sergey Hosid (2008-2019), 
+sergey.hosid@gmail.com
