@@ -70,11 +70,11 @@ ap<-a %>% group_by(dinucleotide) %>%
 
 write.csv(ap,file="apoptotic_10bp_power.csv", row.names = FALSE)
 
-ANOVA1<-aov(powerm~dinucleotide, data=a)
+ANOVA1<-aov(power~dinucleotide, data=a)
 summary(ANOVA1)
 
 apodi<-TukeyHSD(ANOVA1)$dinucleotide
-write.csv(apodi,file="tukey_cmp_apoptotic_10bp_power.csv", row.names = FALSE)
+write.csv(apodi,file="TukeyHSD_apoptotic_10bp_power.csv")
 
 #plot(TukeyHSD(ANOVA1), las=1)
 
@@ -86,13 +86,13 @@ sp<-s %>% group_by(dinucleotide) %>%
   summarize(powerm=mean(power),sd=sd(power), stderr=sd/sqrt(31)) %>%
   arrange(desc(powerm))
 
-write.csv(sp,file="shones_10bp_power.csv", row.names = FALSE)
+write.csv(sp,file="cd4_10bp_power.csv", row.names = FALSE)
 
-ANOVA2<-aov(powerm~dinucleotide, data=s)
+ANOVA2<-aov(power~dinucleotide, data=s)
 summary(ANOVA2)
 
 shonesdi<-TukeyHSD(ANOVA2)$dinucleotide
-write.csv(shonesdi,file="tukey_cmp_shones_10bp_power.csv", row.names = FALSE)
+write.csv(shonesdi,file="TukeyHSD_cd4_10bp_power.csv")
 #plot(TukeyHSD(ANOVA2), las=1)
 
 ################################# Mousecon
@@ -103,11 +103,11 @@ mp<-m %>% group_by(dinucleotide) %>%
   summarize(powerm=mean(power),sd=sd(power), stderr=sd/sqrt(31)) %>%
   arrange(desc(powerm))
 
-write.csv(mp,file="mousecon_10bp_power.csv", row.names = FALSE)
+write.csv(mp,file="mousecon_10bp_power.csv")
 
-ANOVA3<-aov(powerm~dinucleotide, data=m)
+ANOVA3<-aov(power~dinucleotide, data=m)
 summary(ANOVA3)
 
 mousedi<-TukeyHSD(ANOVA3)$dinucleotide
-write.csv(mousedi,file="tukey_cmp_mousecon_10bp_power.csv", row.names = FALSE)
-plot(TukeyHSD(ANOVA3), las=1)
+write.csv(mousedi,file="TukeyHSD_mousecon_10bp_power.csv")
+#plot(TukeyHSD(ANOVA3), las=1)
