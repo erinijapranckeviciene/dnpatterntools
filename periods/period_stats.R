@@ -22,6 +22,22 @@ pSS=getmaxperiod(.$SS,.$period) ,
 pRR=getmaxperiod(.$RR,.$period) ,
 pYY=getmaxperiod(.$YY,.$period) ) )
 
+dpmcmp<-dp %>% select(-sample) %>%
+  gather(value=period, key=dinucleotide, -condition) %>%
+  filter(!grepl("sample",dinucleotide))
+
+dpmcmpa<-dpmcmp %>% filter(grepl("apoptotic",condition))
+ANOVAapo<-aov(period~dinucleotide, data=dpmcmpa)
+TukeyHSD(ANOVAapo)
+
+dpmcmps<-dpmcmp %>% filter(grepl("shones",condition))
+ANOVAshones<-aov(period~dinucleotide, data=dpmcmps)
+TukeyHSD(ANOVAshones)
+
+dpmcmpm<-dpmcmp %>% filter(grepl("conmouse",condition))
+ANOVAmouse<-aov(period~dinucleotide, data=dpmcmpm)
+TukeyHSD(ANOVAmouse)
+
 std <- function(x){ sd(x)/sqrt(length(x)) }
 
 dpsum<-dp %>% group_by(condition) %>% select(-sample) %>%
