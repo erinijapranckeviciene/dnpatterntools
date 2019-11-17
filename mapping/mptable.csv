@@ -1,0 +1,14 @@
+Condition,Nucleosome sequence,RR1,RR2,SS1,SS2,WW1,WW2,YY1,YY2,Total %
+Stress-susceptible ,Random +1 nucleosome (%),8.89,17.47,3.3,23.09,4.42,4.7,23.69,14.43,100
+,Occupacy change in Promoter (%),8.6,16.56,5.18,20.57,3.95,5.29,21.69,18.16,100
+,Occupacy change in Genebody (%),8.8,16.77,4.85,20.11,3.83,5.43,21.12,19.08,100
+Stress-resilient,Random +1 nucleosome(%),8.22,16.97,3.6,22.96,4.47,5.09,23.99,14.71,100
+,Occupacy change in Promoter (%),8.65,14.73,4.73,23.24,4.86,4.05,21.22,18.51,99.9999999999999
+,Occupacy change in Genebody (%),8.26,18.27,4.58,20.51,4,5.39,20.35,18.65,100
+,,,,,,,,,,Total events
+Stress-susceptible ,Random +1 nucleosome (#),1334,2621,495,3464,663,705,3553,2165,15000
+,Occupacy change in Promoter (%),161,310,97,385,74,99,406,340,1872
+,Occupacy change in Genebody (%),1332,2538,734,3043,580,821,3196,2887,15131
+Stress-resilient,Random +1 nucleosome (#),1233,2546,540,3444,670,763,3598,2206,15000
+,Occupacy change in Promoter (%),64,109,35,172,36,30,157,137,740
+,Occupacy change in Genebody (%),428,946,237,1062,207,279,1054,966,5179
