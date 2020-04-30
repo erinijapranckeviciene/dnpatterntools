@@ -1,1 +1,0 @@
-Jiang M, Anderson J, Gillespie J, Mayne M. uShuffle: a useful tool for shuffling biological sequences while preserving the k-let counts. BMC Bioinformatics, 2008, 9:192. PMID18405375

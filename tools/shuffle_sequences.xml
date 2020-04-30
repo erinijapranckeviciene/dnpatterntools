@@ -16,7 +16,13 @@
         <test>
             <param name="input1" value="seq1000.fasta"/>
             <param name="input2" value="2"/>
-            <output name="output1" value="seq1000shuffled.fasta" />
+            <output name="output1">
+                <assert_contents> 
+                    <has_text text=">chr9:42475963-42476182" />
+                    <has_text text=">chr9:42566360-42566579" />
+                    <has_n_lines n="2000" />
+                </assert_contents> 
+            </output>
         </test>
     </tests>
     <help><![CDATA[
@@ -33,7 +39,7 @@
    output.fasta   - shuffle fasta file 
 
  DESCRIPTION
-   Wrapper for ushuffle program Created by M Jiang. Reference PMID: 18405375.
+   Wrapper for ushuffle program Created by M. Jiang.
    The ushuffle shuffles nucleotides in fasta sequence preserving frequency
    of k-mers, a positional order is changed. By default  k=2.
    A sequence in fasta file is shuffled only once. The output fasta
@@ -48,13 +54,17 @@
     ]]></help>
     <citations>
         <citation type="bibtex">
-@misc{githubdnpatterntools,
-  author = {LastTODO, FirstTODO},
-  year = {TODO},
-  title = {dnpatterntools},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  url = {https://github.com/erinijapranckeviciene/dnpatterntools},
+@article{jiang2008ushuffle,
+  title={uShuffle: a useful tool for shuffling biological sequences while preserving the k-let counts},
+  author={Jiang, Minghui and Anderson, James and Gillespie, Joel and Mayne, Martin},
+  journal={BMC bioinformatics},
+  volume={9},
+  number={1},
+  pages={192},
+  year={2008},
+  publisher={Springer}
+  url = {https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-192},
 }</citation>
     </citations>
 </tool>
+

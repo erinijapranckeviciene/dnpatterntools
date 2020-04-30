@@ -54,13 +54,16 @@ Example::
     ]]></help>
     <citations>
         <citation type="bibtex">
-@misc{githubdnpatterntools,
-  author = {E.Pranckeviciene},
-  year = {2018},
-  title = {dnpatterntools},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  url = {https://github.com/erinijapranckeviciene/dnpatterntools},
+@article{pranckeviciene2020nucleosome,
+  title={Nucleosome positioning sequence patterns as packing or regulatory. S1 Appendix.},
+  author={Pranckeviciene, Erinija and Hosid, Sergey and Liang, Nathan and Ioshikhes, Ilya},
+  journal={PLoS computational biology},
+  volume={16},
+  number={1},
+  pages={e1007365},
+  year={2020},
+  publisher={Public Library of Science},
+  url = {https://doi.org/10.1371/journal.pcbi.1007365}
 }</citation>
     </citations>
 </tool>
