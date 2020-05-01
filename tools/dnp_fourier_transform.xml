@@ -1,0 +1,87 @@
+<tool id="dnp_fourier_transform" name="Periodogram" version="0.1.0">
+    <requirements>
+        <requirement type="package" version="1.0">dnp-fourier</requirement>
+    </requirements>
+    <command detect_errors="exit_code" interpreter="sh"><![CDATA[
+        dnp-fourier-transform.sh "$input1" "$output1" "$input2" "$input3" "$input4"
+    ]]></command>
+    <inputs>
+      <param type="data" name="input1" format="tabular" label="Dinucleotide frequencies(no smoothing)"/>
+      <param name="input2" type="integer" value="2" label="Normalization type" />
+      <param name="input3" type="integer" value="3" label="Smoothing window size" />
+      <param name="input4" type="integer" value="4" label="Points to trim " />
+    </inputs>
+    <outputs>
+        <data name="output1" format="tabular" from_work_dir="fourier-output.tabular" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="input1" value="fourier-input.tabular"/>
+            <param name="input2" value="2"/>
+            <param name="input3" value="3"/>
+            <param name="input4" value="4"/>
+            <output name="output1" file="fourier-output.tabular"/>
+        </test>
+    </tests>
+    <help><![CDATA[
+        
+Description::
+
+    This is a shell wrapper of the call to dnp-fourier which computes a periodogram 
+    of a series given as a numerical column and it is called as follows
+    dnp-fourier -f input -o output  -n {normalization 0|1|2}  -l length_of_smoothing_window -t {type_of_output 1|2|3}
+
+    The parameters control a type of normalization and output:
+    Normalization
+       0 base normalization  subtracts mean
+       1 linear normalization removes linear trand 
+       2 quadratic normalization removes quadratic trend
+    Output  type
+       1 normalization outputs normalized original series
+       2 smoothing outputs smoothed original series
+       3 Fourier transform outputs periofogram
+
+     Fourier transform has to be applied on symmetrized, nonsmoothed data, since it performs
+     smoothing internally.  Dinucleotide frequency profiles usually have a quadratic gradient.
+     Therefore, a quadratic normalization is a default setting. Fourier transform is applied to every 
+     column of the input table. In the output the first column contains period in base pairs.
+
+Example::
+ 
+    Input tabular:
+
+    pos	AA	AC	AG	AT	CA	CC	CG	CT	GA	GC	GG	GT	TA	TC	TG	TT	WW	SS	RR	YY
+    -73	0.05664	0.0657	0.06966	0.03644	0.08026	0.09484	0.0362	0.09086	0.07084	0.04032	0.07318	0.06466	0.03862	0.06838	0.05722	0.05602	0.18772	0.24454	0.27032	0.3101
+    -72	0.0668	0.06476	0.0753	0.04282	0.07022	0.08034	0.03534	0.081	0.07222	0.03512	0.06774	0.0598	0.03934	0.07496	0.06628	0.06784	0.2168	0.21854	0.28206	0.30414
+    -71	0.063	0.0621	0.07668	0.04316	0.06926	0.07264	0.03316	0.07992	0.07546	0.03498	0.07306	0.06406	0.04182	0.07374	0.06874	0.06812	0.2161	0.21384	0.2882	0.29442
+    -70	0.0624	0.0643	0.07214	0.04424	0.0642	0.06998	0.03472	0.07718	0.0723	0.03982	0.07472	0.06818	0.04282	0.07674	0.06864	0.06754	0.217	0.21924	0.28156	0.29144
+    -69	0.0622	0.06456	0.074	0.0426	0.0661	0.07114	0.03414	0.08016	0.0703	0.03786	0.07118	0.06754	0.0421	0.07712	0.06988	0.06904	0.21594	0.21432	0.27768	0.29746
+    ...
+
+    Output tabular:
+
+    period	AA	AC	AG	AT	CA	CC	CG	CT	GA	GC	GG	GT	RR	SS	TA	TC	TG	TT	WW	YY
+    2.100000	0.055962	0.061351	0.059462	0.063974	0.060849	0.064279	0.061163	0.065880	0.065897	0.061155	0.063937	0.060605	0.055534	0.056766	0.064493	0.057985	0.061710	0.057163	0.062799	0.057165
+    2.200000	0.031410	0.027762	0.030298	0.030884	0.036627	0.031970	0.033761	0.030523	0.030757	0.033687	0.032216	0.036679	0.029025	0.036916	0.031027	0.030297	0.027772	0.031332	0.037597	0.029181 
+    2.300000	0.024848	0.024942	0.026645	0.019923	0.020795	0.021051	0.021468	0.021097	0.023902	0.024067	0.023638	0.026876	0.024853	0.024313	0.027058	0.018547	0.019763	0.020160	0.022534	0.022048
+    2.400000	0.015580	0.017736	0.017503	0.017749	0.015925	0.017672	0.017981	0.017754	0.018037	0.017791	0.017940	0.019215	0.019337	0.017269	0.017458	0.017108	0.016969	0.019227	0.017725	0.017988
+    2.500000	0.013954	0.012568	0.013675	0.012484	0.014744	0.013639	0.012682	0.013358	0.013474	0.012607	0.013475	0.014589	0.013540	0.013804	0.012656	0.013723	0.012505	0.013873	0.014738	0.013618
+    ...
+
+
+    ]]></help>
+    <citations>
+        <citation type="bibtex">
+@article{pranckeviciene2020nucleosome,
+  title={Nucleosome positioning sequence patterns as packing or regulatory. S1 Appendix},
+  author={Pranckeviciene, Erinija and Hosid, Sergey and Liang, Nathan and Ioshikhes, Ilya},
+  journal={PLoS computational biology},
+  volume={16},
+  number={1},
+  pages={e1007365},
+  year={2020},
+  publisher={Public Library of Science},
+  url = {https://doi.org/10.1371/journal.pcbi.1007365}
+}</citation>
+    </citations>
+</tool>

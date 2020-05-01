@@ -1,0 +1,17 @@
+owner: erinija
+categories:
+- Sequence Analysis
+homepage_url: https://github.com/erinijapranckeviciene/dnpatterntools
+auto_tool_repositories:
+  name_template: "{{ tool_id}}"
+  description_template: "Wrapper for dnpatterntools application {{ tool_name}}."
+suite:
+  name: "suite_dnpatterntools_1_0"
+  description: "A suite of nucleosome positioning sequence (NPS) pattern analysis tools."
+  long_description: |
+    Most often, computation and analysis of patterns of dinucleotide distributions in nucleosomal DNA fasta sequences
+    is implemented individually which makes it difficult to compare and reproduce results obtained in different projects. 
+    This suite contains a set of tools to convert fasta sequences into binary strings of dinucleotide occurrences, 
+    to compute dinucleotide frequencies of occurrence in a batch of aligned fasta sequences, 
+    to compute correlations between patterns of dinucleotide distributions in nucleosomes DNA, 
+    to smooth patterns and to compute their periodogramms.
