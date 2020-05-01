@@ -39,7 +39,7 @@
    output.fasta   - shuffle fasta file 
 
  DESCRIPTION
-   Wrapper for ushuffle program Created by M. Jiang.
+   Wrapper for ushuffle program written by M. Jiang.
    The ushuffle shuffles nucleotides in fasta sequence preserving frequency
    of k-mers, a positional order is changed. By default  k=2.
    A sequence in fasta file is shuffled only once. The output fasta
@@ -62,8 +62,8 @@
   number={1},
   pages={192},
   year={2008},
-  publisher={Springer}
-  url = {https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-192},
+  publisher={Springer},
+  url = {https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-192}
 }</citation>
     </citations>
 </tool>
