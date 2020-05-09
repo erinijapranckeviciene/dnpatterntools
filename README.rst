@@ -10,11 +10,11 @@ Motivation to write these utilities was that most often, computations of such pa
 The dnpatterntools consist of utlities to convert fasta sequences into binary strings of 
 dinucleotide occurrences, to compute dinucleotide frequencies of occurrence in a batch of aligned fasta sequences, to compute correlations between patterns of dinucleotide distributions on forward and complementary sequences bound by nucleosomes, to smooth the patterns and to compute their periodogramms.
 
-The dnpatterntools can be used as stanalone programs or Galay tools. The `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance is based on the `galaxy-stable <https://zenodo.org/record/2579276>`_ .  Working dnapatterntools utilities are on the Galaxy Test Tools Shed. Here the fully functional Galaxy wrappers of are provided in the *tools* folder. To try a Galaxy instance on your Linux machine clone the dnpatterntools, cd to the tools folder and  run a `planemo serve <https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. 
+The dnpatterntools can be used as stanalone programs or Galay tools. The dockerized galaxy instance `here <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance is based on the `galaxy-stable <https://zenodo.org/record/2579276>`_ .  Working dnapatterntools utilities can be found on Galaxy Test Tools Shed. Here, the fully functional Galaxy wrappers are provided in the *tools* folder. To try a dnpatterntools Galaxy instance on your Linux machine clone the dnpatterntools, cd to the tools folder and  run a `planemo serve <https://planemo.readthedocs.io/en/latest/readme.html>`_ from within  *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. 
 
 How to use tools in Galaxy is explained `here <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tutorial.md>`_.
 
-How to use stanalone dnpattertools utilities
+How to use standalone dnpattertools utilities
 ----------------------------------------------
 
 Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_  and can be installed on Linux system by conda::
