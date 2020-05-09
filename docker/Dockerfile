@@ -2,7 +2,7 @@ FROM bgruening/galaxy-stable
 
 MAINTAINER Erinija Pranckeviciene, erinija.pranckeviciene@gmail.com
 
-ENV GALAXY_CONFIG_BRAND Nucleosomal_DNA_patterns_flavor
+ENV GALAXY_CONFIG_BRAND Nucleosome_positioning_sequence_patterns
 
 WORKDIR /galaxy-central
 

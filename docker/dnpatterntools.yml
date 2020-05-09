@@ -2,53 +2,53 @@ tools:
 - name: 'dnp_subset_dinuc_profile'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_correlation_between_profiles'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_select_range'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_symmetrize'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_compute_composite'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_smooth'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_fourier_transform'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'shuffle_sequences'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
 
 - name: 'dnp_binary_strings'
   owner: erinija
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu
-  tool_panel_section_label: 'Nucleosomal DNA patterns'
+  tool_panel_section_label: 'Dnpatterntools'
   install_resolver_dependencies: True
