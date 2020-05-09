@@ -2,14 +2,20 @@
 dnpatterntools v1.0 
 ---------------------
 
-A set of tools to analyze patterns of dinucleotide distributions in nucleosomal DNA fasta sequences. 
+A suite of software tools to analyze nucleosome positioning sequence patterns.
+These patterns are represented by distributions of frequencies of dinucleotide occurrences in a stack of DNA sequences that were bound by nucleosomes. 
 
-Most often, computation of these features is implemented individually which makes difficult to compare and reproduce results obtained in different projects. This repository contains tools to convert fasta sequences into binary strings of 
-dinucleotide occurrences, to compute dinucleotide frequencies of occurrence in a batch of aligned fasta
-sequences, to compute correlations between patterns of dinucleotide distributions in nucleosomes DNA, to smooth patterns and to compute their periodogramms.
+Motivation to write these utilities was that most often, computations of such patterns are implemented by researchers individually. This makes it difficult to reproduce the results obtained in different projects and to perform comparisons. 
 
-How to use
----------------------
+The dnpatterntools consist of utlities to convert fasta sequences into binary strings of 
+dinucleotide occurrences, to compute dinucleotide frequencies of occurrence in a batch of aligned fasta sequences, to compute correlations between patterns of dinucleotide distributions on forward and complementary sequences bound by nucleosomes, to smooth the patterns and to compute their periodogramms.
+
+The dnpatterntools can be used as stanalone programs or Galay tools. The `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance is based on the `galaxy-stable <https://zenodo.org/record/2579276>`_ .  Working dnapatterntools utilities are on the Galaxy Test Tools Shed. Here the fully functional Galaxy wrappers of are provided in the *tools* folder. To try a Galaxy instance on your Linux machine clone the dnpatterntools, cd to the tools folder and  run a `planemo serve <https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. 
+
+How to use tools in Galaxy is explained `here <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tutorial.md>`_.
+
+How to use stanalone dnpattertools utilities
+----------------------------------------------
 
 Core utilities are written in C++ using the `SeqAn library <https://seqan.readthedocs.io/en/master/>`_  and can be installed on Linux system by conda::
 
@@ -26,10 +32,6 @@ To build core utilities from source::
     
 and follow  `instructions <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/source/README.txt>`_ . 
 
-The dnpatterntools are freely available as a  `dockerized galaxy instance <https://hub.docker.com/r/erinija/dnpatterntools-galaxy>`_ which runs on any local machine with the `docker <https://docs.docker.com/v17.12/install/>`_ installed. This instance contains demo data and demo workflow. This instance is based on the `galaxy-stable <https://zenodo.org/record/2579276>`_ .  
-
-On this site the fully functional Galaxy wrappers are provided in the *tools* folder. On Linux machine use a  
-`planemo serve <https://planemo.readthedocs.io/en/latest/readme.html>`_ from within cloned *~/dnpatterntools/tools* folder. It will launch a ready to use dnpatterntools Galaxy instance. The `galaxy-workflow pdf  <https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/galaxy-workflow.pdf>`_ explains how to use tools in Galaxy.
 
 General workflow 
 ------------------------
