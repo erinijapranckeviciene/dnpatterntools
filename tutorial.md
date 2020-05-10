@@ -33,9 +33,17 @@ Start your dnpatterntools-galaxy instance locally or in [docker](https://hub.doc
  
  The new uncompressed fasta file appear in your history. To rename the data:  
  - Go to `Edit attributes` and select an `Attributes` tab
- - Change __Name__ to controlm.fa and press `Save`. 
+ - Change __Name__ to *controlm.fa* and press `Save`. 
  The renamed data file will reappear in your history.   
-### Compute frequencies of dinucleotides occurrences in fasta 
+### Compute dinucleotides frequencies of occurrence in fasta file 
+In a stack of nucleosomal DNA sequences aligned by an experimental end a frequency of occurrence of each dinucleotide is computed at each position. Given a binary matrix of dinucleotde occurrences in sequences coded as 1 and else as 0, a frequency proﬁle is simply a sum of occurrences of the selected dinucleotide at every position along the sequence. The sum is normalized by the number of sequences. To compute dinucleotide frequencies:
+- From the Tools panel in a `Dnpatterntools` section select `Dinucleotide frequencies` tool
+- In the field __From Fasta__ select *controlm.fa* data
+- In the field __Dinucleotides__ input all 16 dinucleotides separated by space (this is a default option)
+- Press execute
+- Inspect the data 
+
+### in progress , will be completed shortly
 Visualize computed frequencies of occurrences of dinucleotides
 ![Fig1](https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tools-extra/tutimg/Fig1.PNG "Frequency profiles of dinucleotides")
 ### Determine a dyad position 
