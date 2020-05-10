@@ -25,7 +25,8 @@ The  sequences of mouse (mm9) nucleosomal DNA that will be used in this demo are
 text
 
 ### Compute frequencies of dinucleotides occurrences in fasta 
-text
+Visualize computed frequencies of occurrences of dinucleotides
+![Fig1](https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tools-extra/tutimg/Fig1.PNG "Frequency profiles of dinucleotides")
 ### Determine a dyad position 
 text
 ### Select pattern interval, symmetrize and compute composite dinucleotide profiles
