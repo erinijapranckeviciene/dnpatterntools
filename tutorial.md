@@ -18,7 +18,7 @@ Computation of patterns of dinucleotide frequency distributions from nucleosome 
 
 The  sequences of mouse (mm9) nucleosomal DNA that will be used in this demo are available from Zenodo . We will use sequences in [controlm.fa.gz](https://doi.org/10.5281/zenodo.3813510) .
 
-## Hands on demo
+## Hands on guide
 Start your dnpatterntools-galaxy instance locally or in [docker](https://hub.docker.com/r/erinija/dnpatterntools-galaxy). Log in and start a new history. Name the history as __Dnpatterntools demo__.  
 ### Upload fasta file to your history
  - Copy the data link `https://zenodo.org/record/3813510/files/controlm.fa.gz`
