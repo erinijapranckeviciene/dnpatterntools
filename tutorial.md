@@ -11,7 +11,7 @@
 Computation of patterns of dinucleotide frequency distributions from nucleosome sequences consists of :
 1. computation of distribution of frequency of dinucleotide occurrences in a stack of aligned sequences; 
 2. determination of a statistical dyad position in sequences; 
-3. obtaining statistical patterns of dinucleotide frequency of occurrence in the the sequence applying symmetrization  and computing composite dinucleotides WW/SS (W = A or T and S=C or G) and RR/YY (R=A or G and Y=C or T);
+3. obtaining statistical patterns of dinucleotide frequency of occurrence in the sequence applying symmetrization  and computing composite dinucleotides WW/SS (W = A or T and S=C or G) and RR/YY (R=A or G and Y=C or T);
 4. normalization and smoothing of the patterns and computing their periodograms.
 
 ## Data [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3813510.svg)](https://doi.org/10.5281/zenodo.3813510) 
