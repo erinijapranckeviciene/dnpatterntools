@@ -21,7 +21,18 @@ The  sequences of mouse (mm9) nucleosomal DNA that will be used in this demo are
 ## Hands on demo
 Start your dnpatterntools-galaxy instance locally or in [docker](https://hub.docker.com/r/erinija/dnpatterntools-galaxy). Log in and start a new history. Name the history as __Dnpatterntools demo__.  
 ### Upload fasta file to your history
-Copy the data link `https://zenodo.org/record/3813510/files/controlm.fa.gz`. Open the Galaxy Upload Manager. Choose `Paste/Fetch data` paste the link. Set __Type__ to `fasta.gz` and __Genome__ to `mm9`. Press `Start` and `Close`. The data file will appear in your history. It will be a compressed file. Go to `Edit attributes` and select `Convert` tab. Select `Convert compressed file to uncompressed` and press `Convert datatype` button. The new uncompressed fasta file appear in your history. Go to `Edit attributes` and select `Attributes` tab. Change __Name__ to controlm.fa and press `Save`. The data file in your history will be renamed.  
+ - Copy the data link `https://zenodo.org/record/3813510/files/controlm.fa.gz`
+ - Open the Galaxy Upload Manager 
+ - Choose `Paste/Fetch data` and paste the copied link into the place holder
+ - Set __Type__ to `fasta.gz` and __Genome__ to `mm9`
+ - Press `Start` and `Close`. 
+ The data file will appear in your history. It will be a compressed file. To extract fasta: 
+ - Go to `Edit attributes` and select  a `Convert` tab
+ - Select `Convert compressed file to uncompressed` and press `Convert datatype` button. 
+ The new uncompressed fasta file appear in your history. To rename the data:  
+ - Go to `Edit attributes` and select an `Attributes` tab
+ - Change __Name__ to controlm.fa and press `Save`. 
+ The renamed data file will reappear in your history.   
 ### Compute frequencies of dinucleotides occurrences in fasta 
 Visualize computed frequencies of occurrences of dinucleotides
 ![Fig1](https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tools-extra/tutimg/Fig1.PNG "Frequency profiles of dinucleotides")
