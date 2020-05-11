@@ -69,7 +69,7 @@ The `Correlations` tool outputs Pearson correlation coefficients for each dinucl
 ![Fig2](https://github.com/erinijapranckeviciene/dnpatterntools/blob/master/tools-extra/tutimg/Fig4.PNG "Correlations of frequency profiles of dinucleotides")
 __Figure 2. Correlations across a nucleosome sequence for frequency profiles of the CC, AA, AC dinucleotides.__ 
 
-### Select pattern interval, symmetrize and compute composite dinucleotide profiles
+### Select pattern interval
 In the previous step we have chosen start position of the nucleosome as 25. To further analyze patterns of the dnucleotide occurrences in nucleosomal DNA select only the interval of the nucleosome in the dinucleotide frequency profile data:
 - From the Tools panel in a `Dnpatterntools` section select `Select interval` tool
 - In the field __Table of profiles__ select `Dinucleotide frequencies of control mouse` data
@@ -80,6 +80,8 @@ In the previous step we have chosen start position of the nucleosome as 25. To f
 - Inspect the data 
 - Rename the new dataset to `Selected Dinucleotide frequencies of control mouse`
 
+### Symmetrize
+
 The symmetrization of the selected frequency profiles means superimposition of the dinucleotide frequency profiles from
 forward and complementary sequences with respect to a central dyad position of the frequency profile. To symmetrize:
 - From the Tools panel in a `Dnpatterntools` section select `Symmetrize` tool
@@ -88,7 +90,9 @@ forward and complementary sequences with respect to a central dyad position of t
 - Inspect the data 
 - Rename the new dataset to `Symmetrized Dinucleotide frequencies of control mouse`
 
-Compute composite dinucleotide profiles of Weak/Weak WW (W = A or T) Strong/Strong SS (S = C or G) Purine/Purine RR (R = A or G) and Pyrimidine/Pyrimidine YY (Y=C or T) from the symmetrized profiles. Statistically, composite profiles reveal most prominent features in frequency patterns in nucleosomal DNA sequences. To add columns for WW, SS, RR, YY composite profiles:
+### Compute composite dinucleotide profiles
+
+Statistically, composite profiles reveal most prominent features in frequency patterns in nucleosomal DNA sequences. To compute composite dinucleotide profiles of Weak/Weak WW (W = A or T) Strong/Strong SS (S = C or G) Purine/Purine RR (R = A or G) and Pyrimidine/Pyrimidine YY (Y=C or T) from the symmetrized profiles:
 - From the Tools panel in a `Dnpatterntools` section select `Composite profiles` tool
 - In the field __input1__ select `Symmetrized Dinucleotide frequencies of control mouse` data
 - Press `Execute`
